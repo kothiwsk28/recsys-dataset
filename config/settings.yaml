@@ -1,23 +1,23 @@
 general:
   timestamp_format: "%Y%m%d.%H%M%S"
-
+  project_path: "{ { /Users/sandeep.kothiwale/github/kaggle/recsys-dataset/ } }"
 paths:
-  raw: data/raw/
-  processed: data/processed_data/
-  data_split: data/data_splits/
+  raw: {{project_path}} + data/raw/
+  processed: {{project_path}} + data/processed_data/
+  data_split: {{project_path}} + data/data_splits/
 
 session_files:
-  train: data/data_splits/train_sessions.jsonl
-  test: data/data_splits/test_sessions.jsonl
-  test_full: data/data_splits/test_sessions_full.jsonl
-  test_labels: data/data_splits/test_labels.jsonl
+  train: {{project_path}} + data/data_splits/train_sessions.jsonl
+  test: {{project_path}} + data/data_splits/test_sessions.jsonl
+  test_full: {{project_path}} + data/data_splits/test_sessions_full.jsonl
+  test_labels: {{project_path}} + data/data_splits/test_labels.jsonl
 
 processed_files:
-  train: data/processed_data/train_sessions.parquet
-  test: data/processed_data/test_sessions.parquet
+  train: {{project_path}} + data/processed_data/train_sessions.parquet
+  test: {{project_path}} + data/processed_data/test_sessions.parquet
 
 predictions:
-  path: data/predictions/predictions.csv
+  path: {{project_path}} + data/predictions/predictions.csv
 
 metrics:
-  path: metrics/scores.json
+  path: {{project_path}} + metrics/scores.json
