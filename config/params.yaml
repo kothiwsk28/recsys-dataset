@@ -1,6 +1,6 @@
 covisitation:
-  data_fraction: 0.001
-  hours_cutoff: 24
-  weights: [1,1,1]
+  data_fraction:
+  hours_cutoff:
+  weights:
 
 
