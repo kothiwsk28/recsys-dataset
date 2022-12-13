@@ -12,7 +12,7 @@ stages:
     deps:
       - src/covisitation_matrix.py
     params:
-      - config/params.yaml:
+      - params.yaml:
   evaluate:
     wdir: ${wdir}
     cmd: >-

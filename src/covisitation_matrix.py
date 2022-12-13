@@ -5,7 +5,7 @@ from pathlib import Path
 
 #from .evaluate import train_call
 
-params = yaml.safe_load(open("config/params.yaml"))["covisitation"]
+params = yaml.safe_load(open("params.yaml"))["covisitation"]
 paths = yaml.safe_load(open("config/settings.yaml"))["processed_files"]
 
 train = pd.read_parquet(paths["train"])
