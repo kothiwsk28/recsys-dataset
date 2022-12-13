@@ -3,11 +3,17 @@ stages:
   covisitation:
     cmd: python src/covisitation_matrix.py
     deps:
+    - path: data/processed_data/test_sessions.parquet
+      md5: 2145434d13b3844bab5bf9c7dd1c32cb
+      size: 31763136
+    - path: data/processed_data/train_sessions.parquet
+      md5: 073341ea26879bdeec22ce7472ebb615
+      size: 2790827120
     - path: src/covisitation_matrix.py
-      md5: 018911d2c18b13f6fa7f72fe9dec9335
-      size: 4389
+      md5: 7a1122937ee938caa1dcac8b56635535
+      size: 4382
     params:
-      config/params.yaml:
+      params.yaml:
         covisitation:
           data_fraction: 0.001
           hours_cutoff: 24
