@@ -4,6 +4,10 @@ import yaml
 from pathlib import Path
 
 #from .evaluate import train_call
+import os
+cwd = os.getcwd()
+
+print(cwd)
 
 params = yaml.safe_load(open("params.yaml"))["covisitation"]
 paths = yaml.safe_load(open("config/settings.yaml"))["processed_files"]
