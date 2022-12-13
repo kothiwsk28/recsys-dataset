@@ -1,6 +1,8 @@
+vars:
+  - project_path: /Users/sandeep.kothiwale/github/kaggle/recsys-dataset/
 general:
   timestamp_format: "%Y%m%d.%H%M%S"
-  project_path: /Users/sandeep.kothiwale/github/kaggle/recsys-dataset/
+
 paths:
   raw: ${project_path} + data/raw/
   processed: ${project_path} + data/processed_data/
