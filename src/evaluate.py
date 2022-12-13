@@ -169,7 +169,7 @@ def main(labels_path: Path, predictions_path: Path):
     scores = get_scores(labels, predictions)
     logging.info(f"Scores: {scores}")
     metrics = {"score": scores["total"]}
-    metrics_path = yaml.safe_load(open("settings.yaml"))["metrics"]
+    metrics_path = yaml.safe_load(open("config/settings.yaml"))["metrics"]
     accuracy_path = metrics_path["path"]
     accuracy_path.write_text(json.dumps(metrics))
 
@@ -177,7 +177,7 @@ def main(labels_path: Path, predictions_path: Path):
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     parser = argparse.ArgumentParser()
-    parser.add_argument('--test-labels', default="resources/test_labels.jsonl", type=str)
-    parser.add_argument('--predictions', default="resources/predictions.csv", type=str)
+    parser.add_argument('--test-labels', default=yaml.safe_load(open("config/settings.yaml"))["session_files"]["test_labels"], type=str)
+    parser.add_argument('--predictions', default=yaml.safe_load(open("config/settings.yaml"))["predictions"]["path"], type=str)
     args = parser.parse_args()
     main(Path(args.test_labels), Path(args.predictions))
