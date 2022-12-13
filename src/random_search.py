@@ -2,7 +2,7 @@ import subprocess
 import random
 
 # Automated random search experiments
-num_exps = 4
+num_exps = 20
 random.seed(0)
 
 for _ in range(num_exps):
