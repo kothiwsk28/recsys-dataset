@@ -9,6 +9,7 @@ tqdm = "*"
 kaggle = "*"
 beartype = "*"
 dvc = "*"
+pyarrow = "*"
 
 [dev-packages]
 pytest = "*"
