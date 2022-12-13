@@ -1,5 +1,5 @@
 vars:
-  - wdir: ../
+  - wdir: .
   - env: dev
   - model_type: matrix
   - config/settings.yaml:metrics
