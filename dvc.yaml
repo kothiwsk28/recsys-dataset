@@ -1,0 +1,17 @@
+vars:
+  - wdir: ../
+  - env: dev
+  - model_type: matrix
+  - config/settings.yaml:metrics
+
+stages:
+  covisitation:
+    wdir: ${wdir}
+    cmd: >-
+      pipenv run python -m src.covisitation_matrix
+    deps:
+      - src/covisitation_matrix.py
+    params:
+      - params.yaml:
+    metrics:
+      - ${metrics.path}

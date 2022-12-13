@@ -1,0 +1,23 @@
+general:
+  timestamp_format: "%Y%m%d.%H%M%S"
+
+paths:
+  raw: data/raw/
+  processed: data/processed_data/
+  data_split: data/data_splits/
+
+session_files:
+  train: data/data_splits/train_sessions.jsonl
+  test: data/data_splits/test_sessions.jsonl
+  test_full: data/data_splits/test_sessions_full.jsonl
+  test_labels: data/data_splits/test_labels.jsonl
+
+processed_files:
+  train: data/processed_data/train_sessions.parquet
+  test: data/processed_data/test_sessions.parquet
+
+predictions:
+  path: data/predictions/predictions.csv
+
+metrics:
+  path: metrics/scores.json

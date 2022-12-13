@@ -5,6 +5,7 @@ from pathlib import Path
 
 from beartype import beartype
 from tqdm.auto import tqdm
+import yaml
 
 
 @beartype
@@ -134,6 +135,25 @@ def get_scores(labels: dict[int, dict],
 
 
 @beartype
+def train_call(labels_path: Path, predictions: list[str]):
+    with open(labels_path, "r") as f:
+        logging.info(f"Reading labels from {labels_path}")
+        labels = f.readlines()
+        labels = prepare_labels(labels)
+        logging.info(f"Read {len(labels)} labels")
+    predictions = prepare_predictions(predictions[1:])
+    logging.info(f"Read {len(predictions)} predictions")
+
+    logging.info("Calculating scores")
+    scores = get_scores(labels, predictions)
+    logging.info(f"Scores: {scores}")
+    metrics = {"score": scores["total"]}
+    metrics_path = yaml.safe_load(open("config/settings.yaml"))["metrics"]
+    accuracy_path = Path(metrics_path["path"])
+    accuracy_path.write_text(json.dumps(metrics))
+
+
+@beartype
 def main(labels_path: Path, predictions_path: Path):
     with open(labels_path, "r") as f:
         logging.info(f"Reading labels from {labels_path}")
@@ -148,6 +168,10 @@ def main(labels_path: Path, predictions_path: Path):
     logging.info("Calculating scores")
     scores = get_scores(labels, predictions)
     logging.info(f"Scores: {scores}")
+    metrics = {"score": scores["total"]}
+    metrics_path = yaml.safe_load(open("settings.yaml"))["metrics"]
+    accuracy_path = metrics_path["path"]
+    accuracy_path.write_text(json.dumps(metrics))
 
 
 if __name__ == "__main__":

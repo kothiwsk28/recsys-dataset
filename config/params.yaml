@@ -1,0 +1,6 @@
+co-visitation:
+  data_fraction: 0.1
+  hours_cutoff: 24
+  weights: [1,1,1]
+
+

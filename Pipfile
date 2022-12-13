@@ -8,6 +8,7 @@ pandas = "*"
 tqdm = "*"
 kaggle = "*"
 beartype = "*"
+dvc = "*"
 
 [dev-packages]
 pytest = "*"
