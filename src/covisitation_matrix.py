@@ -3,7 +3,7 @@ import numpy as np
 import yaml
 from pathlib import Path
 
-from .evaluate import train_call
+#from .evaluate import train_call
 
 params = yaml.safe_load(open("config/params.yaml"))["co-visitation"]
 paths = yaml.safe_load(open("config/settings.yaml"))["processed_files"]
@@ -97,14 +97,14 @@ for st in session_types:
     modified_predictions.session_type = modified_predictions.session_type.astype('str') + f'_{st}'
     prediction_dfs.append(modified_predictions)
 
-submission = pd.concat(prediction_dfs).reset_index(drop=True)
+submission = pd.concat(prediction_dfs)#.reset_index(drop=True)
 
 labels_path = yaml.safe_load(open("config/settings.yaml"))["session_files"]["test_labels"]
-submission = submission.to_string(index=False).split('\n')
-submission = [f"{ele.split()[0]},{' '.join(ele.split()[1:])}" for ele in submission]
-train_call(Path(labels_path), submission)
+# submission = submission.to_string(index=False).split('\n')
+# submission = [f"{ele.split()[0]},{' '.join(ele.split()[1:])}" for ele in submission]
+# train_call(Path(labels_path), submission)
 
-# pred_path = yaml.safe_load(open("config/settings.yaml"))["predictions"]
-# submission.to_csv(pred_path["path"], index=False)
+pred_path = yaml.safe_load(open("config/settings.yaml"))["predictions"]
+submission.to_csv(pred_path["path"], index=False)
 
 print(f'Test sessions that we did not manage to extend based on the co-visitation matrix: {no_data_all_aids}')

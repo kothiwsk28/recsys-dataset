@@ -11,8 +11,13 @@ stages:
       python src/covisitation_matrix.py
     deps:
       - src/covisitation_matrix.py
-      - src/evaluate.py
     params:
       - config/params.yaml:
+  evaluate:
+    wdir: ${wdir}
+    cmd: >-
+      python src/evaluate.py
+    deps:
+      - src/evaluate.py
     metrics:
       - ${metrics.path}
