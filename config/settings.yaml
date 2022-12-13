@@ -4,22 +4,22 @@ general:
   timestamp_format: "%Y%m%d.%H%M%S"
 
 paths:
-  raw: ${project_path} + data/raw/
-  processed: ${project_path} + data/processed_data/
-  data_split: ${project_path} + data/data_splits/
+  raw: /Users/sandeep.kothiwale/github/kaggle/recsys-dataset/data/raw/
+  processed: /Users/sandeep.kothiwale/github/kaggle/recsys-dataset/data/processed_data/
+  data_split: /Users/sandeep.kothiwale/github/kaggle/recsys-dataset/data/data_splits/
 
 session_files:
-  train: ${project_path} + data/data_splits/train_sessions.jsonl
-  test: ${project_path} + data/data_splits/test_sessions.jsonl
-  test_full: ${project_path} + data/data_splits/test_sessions_full.jsonl
-  test_labels: ${project_path} + data/data_splits/test_labels.jsonl
+  train: /Users/sandeep.kothiwale/github/kaggle/recsys-dataset/data/data_splits/train_sessions.jsonl
+  test: /Users/sandeep.kothiwale/github/kaggle/recsys-dataset/data/data_splits/test_sessions.jsonl
+  test_full: /Users/sandeep.kothiwale/github/kaggle/recsys-dataset/data/data_splits/test_sessions_full.jsonl
+  test_labels: /Users/sandeep.kothiwale/github/kaggle/recsys-dataset/data/data_splits/test_labels.jsonl
 
 processed_files:
-  train: ${project_path} + data/processed_data/train_sessions.parquet
-  test: ${project_path} + data/processed_data/test_sessions.parquet
+  train: /Users/sandeep.kothiwale/github/kaggle/recsys-dataset/data/processed_data/train_sessions.parquet
+  test: /Users/sandeep.kothiwale/github/kaggle/recsys-dataset/data/processed_data/test_sessions.parquet
 
 predictions:
-  path: ${project_path} + data/predictions/predictions.csv
+  path: /Users/sandeep.kothiwale/github/kaggle/recsys-dataset/data/predictions/predictions.csv
 
 metrics:
-  path: ${project_path} + metrics/scores.json
+  path: /Users/sandeep.kothiwale/github/kaggle/recsys-dataset/metrics/scores.json
