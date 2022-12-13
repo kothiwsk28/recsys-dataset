@@ -8,7 +8,7 @@ stages:
   covisitation:
     wdir: ${wdir}
     cmd: >-
-      python src/covisitation_matrix
+      python src/covisitation_matrix.py
     deps:
       - src/covisitation_matrix.py
     params:
