@@ -1,21 +1,17 @@
 schema: '2.0'
 stages:
   covisitation:
-    cmd: pipenv run python -m src.covisitation_matrix
+    cmd: python src/covisitation_matrix.py
     deps:
     - path: src/covisitation_matrix.py
-      md5: 5470f16e245f74b038427060477a2e21
-      size: 4386
+      md5: 018911d2c18b13f6fa7f72fe9dec9335
+      size: 4389
     params:
       config/params.yaml:
-        co-visitation:
-          data_fraction: 0.0001
+        covisitation:
+          data_fraction: 0.001
           hours_cutoff: 24
           weights:
           - 1
           - 1
           - 1
-    outs:
-    - path: metrics/scores.json
-      md5: 2f037eb1c09b3317d09bbc104a74001b
-      size: 29
