@@ -11,6 +11,7 @@ stages:
       python src/covisitation_matrix.py
     deps:
       - src/covisitation_matrix.py
+      - src/evaluate.py
     params:
       - config/params.yaml:
     metrics:
