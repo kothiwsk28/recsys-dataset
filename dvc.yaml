@@ -11,8 +11,6 @@ stages:
       python src/covisitation_matrix.py
     deps:
       - src/covisitation_matrix.py
-      - data/processed_data/train_sessions.parquet
-      - data/processed_data/test_sessions.parquet
     params:
       - params.yaml:
   evaluate:
