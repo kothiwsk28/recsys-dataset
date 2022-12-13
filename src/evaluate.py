@@ -170,7 +170,7 @@ def main(labels_path: Path, predictions_path: Path):
     logging.info(f"Scores: {scores}")
     metrics = {"score": scores["total"]}
     metrics_path = yaml.safe_load(open("config/settings.yaml"))["metrics"]
-    accuracy_path = metrics_path["path"]
+    accuracy_path = Path(metrics_path["path"])
     accuracy_path.write_text(json.dumps(metrics))
 
 
