@@ -13,6 +13,6 @@ for _ in range(num_exps):
 
     }
     subprocess.run(["dvc", "exp", "run", "--queue",
-                    "--set-param", f"+covisitation.data_fraction={params['data_fraction']}",
-                    "--set-param", f"+covisitation.hours_cutoff={params['hours_cutoff']}",
-                    "--set-param", f"+covisitation.weights={params['weights']}"])
+                    "--set-param", f"covisitation.data_fraction={params['data_fraction']}",
+                    "--set-param", f"covisitation.hours_cutoff={params['hours_cutoff']}",
+                    "--set-param", f"covisitation.weights={params['weights']}"])
