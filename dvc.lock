@@ -15,3 +15,13 @@ stages:
           - 1
           - 1
           - 1
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - path: src/evaluate.py
+      md5: f2d175a15f39ab669aa0c0ba5802f929
+      size: 6523
+    outs:
+    - path: metrics/scores.json
+      md5: 8549aa23e46659d10cc6802a6c7a80a0
+      size: 29
