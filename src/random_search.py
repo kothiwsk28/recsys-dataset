@@ -8,7 +8,7 @@ random.seed(0)
 for _ in range(num_exps):
     params = {
 
-        "data_fraction": random.choice([0.1]),
+        "data_fraction": random.choice([0.0001]),
         "hours_cutoff": random.choice([18, 12, 24, 36, 48]),
         "weights": random.choice([[1, 1, 1], [1, 3, 6], [1, 6, 3], [3, 6, 1], [1, 2, 4], [6, 3, 1]])
 
