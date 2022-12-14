@@ -172,7 +172,7 @@ def main(labels_path: Path, predictions_path: Path):
     metrics = {"score": scores["total"]}
     accuracy_path = os.path.join("metrics", "scores.json")
     with open(accuracy_path, "w") as fd:
-        json.dump(metrics)
+        json.dump(metrics, fd, indent=4)
 
 
 if __name__ == "__main__":

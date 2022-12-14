@@ -17,6 +17,7 @@ stages:
     cmd: >-
       python src/evaluate.py
     deps:
+      - src/covisitation_matrix.py
       - src/evaluate.py
     metrics:
       - metrics/scores.json:
