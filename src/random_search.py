@@ -2,15 +2,15 @@ import subprocess
 import random
 
 # Automated random search experiments
-num_exps = 2
+num_exps = 30
 random.seed(0)
 
 for _ in range(num_exps):
     params = {
 
-        "data_fraction": random.choice([0.0001]),
+        "data_fraction": random.choice([0.1]),
         "hours_cutoff": random.choice([18, 12, 24, 36, 48]),
-        "weights": random.choice([[1, 1, 1], [1, 3, 6], [1, 6, 3], [3, 6, 1], [1, 2, 4], [6, 3, 1]])
+        "weights": random.choice([[1, 1, 1], [1, 3, 6], [1, 6, 3], [1, 2, 4], [1, 4, 2], [1, 8, 2], [2, 3, 1]])
 
 
     }
