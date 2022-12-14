@@ -20,4 +20,5 @@ stages:
     deps:
       - src/evaluate.py
     metrics:
-      - ${metrics.path}
+    - metrics/scores.json:
+      cache: false

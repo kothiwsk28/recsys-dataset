@@ -169,9 +169,9 @@ def main(labels_path: Path, predictions_path: Path):
     scores = get_scores(labels, predictions)
     logging.info(f"Scores: {scores}")
     metrics = {"score": scores["total"]}
-    metrics_path = yaml.safe_load(open("config/settings.yaml"))["metrics"]
-    accuracy_path = Path(metrics_path["path"])
-    accuracy_path.write_text(json.dumps(metrics))
+    accuracy_path = os.path.join("metrics", "scores.json")
+    with open(accuracy_path, "w") as fd:
+        json.dump(metrics)
 
 
 if __name__ == "__main__":
