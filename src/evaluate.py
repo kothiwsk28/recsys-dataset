@@ -6,6 +6,7 @@ from pathlib import Path
 from beartype import beartype
 from tqdm.auto import tqdm
 import yaml
+import os
 
 
 @beartype
