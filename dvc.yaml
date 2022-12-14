@@ -1,12 +1,10 @@
 vars:
-  - wdir: .
   - env: dev
   - model_type: matrix
   - config/settings.yaml:metrics
 
 stages:
   covisitation:
-    wdir: ${wdir}
     cmd: >-
       python src/covisitation_matrix.py
     deps:
@@ -14,7 +12,6 @@ stages:
     params:
       - params.yaml:
   evaluate:
-    wdir: ${wdir}
     cmd: >-
       python src/evaluate.py
     deps:

@@ -22,4 +22,4 @@ predictions:
   path: /Users/sandeep.kothiwale/github/kaggle/recsys-dataset/data/predictions/predictions.csv
 
 metrics:
-  path: /Users/sandeep.kothiwale/github/kaggle/recsys-dataset/metrics/scores.json
+  path: metrics/scores.json
