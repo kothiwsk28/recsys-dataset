@@ -2,7 +2,6 @@ vars:
   - wdir: .
   - env: dev
   - model_type: matrix
-  - config/settings.yaml:metrics
 
 stages:
   covisitation:
@@ -20,5 +19,5 @@ stages:
     deps:
       - src/evaluate.py
     metrics:
-    - metrics/scores.json:
-      cache: false
+      - metrics/scores.json:
+          cache: false
