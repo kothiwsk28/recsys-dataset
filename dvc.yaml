@@ -2,6 +2,7 @@ vars:
   - wdir: .
   - env: dev
   - model_type: matrix
+  - config/settings.yaml:metrics
 
 stages:
   covisitation:
@@ -20,5 +21,4 @@ stages:
       - src/covisitation_matrix.py
       - src/evaluate.py
     metrics:
-      - metrics/scores.json:
-          cache: false
+      - ${metrics.path}
